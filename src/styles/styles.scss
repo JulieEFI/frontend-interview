@@ -1,0 +1,150 @@
+@import "fonts.scss";
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("../assets/bg/klim-musalimov-yU4XRBasaDY-unsplash.jpg");
+  background-color: #8d7c7c;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+input,
+button {
+  padding: 0;
+  margin: 0;
+}
+
+input {
+  outline: none;
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.form {
+  padding-top: 100px;
+  width: 500px;
+  height: 300px;
+  display: flex;
+  position: relative;
+  margin: 0 auto;
+  font-size: 26px;
+}
+
+.container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black url("../assets/bg/g0R5.gif") center 50px no-repeat;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.container._sending::after {
+  opacity: 0.5;
+  visibility: visible;
+}
+
+.form__container-inp {
+  width: 70%;
+  height: 50px;
+  display: flex;
+  background: rgba(247, 243, 243, 0.966);
+  opacity: 0.8;
+  border: 2px solid white;
+  transform: skew(-40deg);
+}
+
+.form__input {
+  margin-left: 25px;
+  background: rgba(247, 243, 243, 0.966);
+  transform: skew(40deg);
+  border: none;
+  & ::placeholder {
+    transform: skew(40deg);
+  }
+}
+
+.form__container-btn {
+  width: 30%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  background: red;
+  border: 2px solid white;
+  transform: skew(-40deg);
+}
+
+.form__btn {
+  border: none;
+  background: red;
+  color: white;
+  transform: skewX(40deg);
+}
+
+.form__btn span {
+  transform: skewX(40deg);
+}
+
+.invalid {
+  border: 2px solid red;
+  box-shadow: 0 0 10px red;
+}
+
+.valid {
+  border: 2px solid rgb(48, 105, 48);
+  box-shadow: 0 0 10px rgb(48, 105, 48);
+}
+.normal {
+  border: 2px solid white;
+}
+
+@media screen and (max-width: 1360px) {
+  body {
+    width: calc(1200px +5%);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .form {
+    width: 400px;
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .form {
+    width: 300px;
+    font-size: 26px;
+  }
+
+  .form__container-inp--left {
+    transform: skew(0deg);
+  }
+
+  .form__input {
+    transform: skew(0deg);
+    & ::placeholder {
+      transform: skew(0deg);
+    }
+  }
+
+  .form__container-btn--right {
+    transform: skew(0deg);
+  }
+
+  .form__btn {
+    transform: skewX(0deg);
+  }
+
+  .form__btn span {
+    transform: skewX(0deg);
+  }
+}
